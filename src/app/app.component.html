@@ -1,18 +1,43 @@
-<div class="container mt-5 text-center">
-  <h2>Angular Weather App</h2>
-
-  <input [(ngModel)]="city" class="form-control mb-3" placeholder="Enter city name" />
-  <button class="btn btn-primary mb-4" (click)="getWeather()">Get Weather</button>
-
-  <div *ngIf="weatherData">
-    <h3>{{ weatherData.name }}</h3>
-    <p><strong>Temperature:</strong> {{ weatherData.main.temp }} °C</p>
-    <p><strong>Weather:</strong> {{ weatherData.weather[0].description }}</p>
-    <p><strong>Humidity:</strong> {{ weatherData.main.humidity }}%</p>
-    <p><strong>Wind Speed:</strong> {{ weatherData.wind.speed }} m/s</p>
+  <div class="main">
+  <div class="weather-layout container mt-5">
+  <!-- Left: Date and Time -->
+  <div class="box date-time">
+    <h4><strong>{{ currentDate | date: 'fullDate' }}</strong></h4>
+    <p>{{ currentDate | date: 'shortTime' }}</p>
   </div>
 
-  <div *ngIf="error" class="text-danger">
-    {{ error }}
+  <!-- Middle: Search -->
+  <div class="box center-box text-center">
+    <h2><strong>Angular Weather App</strong></h2>
+    <input [(ngModel)]="city" class="form-control mb-3" placeholder="Enter city name" />
+    <button class="btn get-weather-btn mb-3" (click)="getWeather()">Get Weather</button>
+
   </div>
+
+  <!-- Right: Piduguralla Weather -->
+  <div class="box weather-card text-start">
+    <h4>Ram Murari's Home Town</h4>
+    <h3>Piduguralla</h3>
+    <p><strong>Temperature:</strong> {{ pidugurallaWeather?.main.temp }} °C</p>
+    <p><strong>Weather:</strong> {{ pidugurallaWeather?.weather[0].description }}</p>
+    <p><strong>Humidity:</strong> {{ pidugurallaWeather?.main.humidity }}%</p>
+    <p><strong>Wind Speed:</strong> {{ pidugurallaWeather?.wind.speed }} m/s</p>
+  </div>
+</div>
+
+  <!-- Searched City Weather -->
+    <div *ngIf="weatherData" class="weather-card text-start">
+      <div class="result text-center">
+        <h4>Searched City Weather Info : </h4>
+      <h3>{{ weatherData.name }}</h3>
+      <p><strong>Temperature:</strong> {{ weatherData.main.temp }} °C</p>
+      <p><strong>Weather:</strong> {{ weatherData.weather[0].description }}</p>
+      <p><strong>Humidity:</strong> {{ weatherData.main.humidity }}%</p>
+      <p><strong>Wind Speed:</strong> {{ weatherData.wind.speed }} m/s</p>
+    </div>
+
+    <div *ngIf="error" class="text-danger">
+      {{ error }}
+    </div>
+</div>
 </div>
