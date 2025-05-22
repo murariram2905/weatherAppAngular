@@ -1,59 +1,86 @@
-# Weather
+# WeatherAppAngular 🌦️
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+WeatherAppAngular is a responsive Angular application that fetches and displays real-time weather information for any city using the OpenWeatherMap API. It also shows default weather information for **Piduguralla**, your hometown, on the right side, and current date & time on the left.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🔥 Features
+
+- Live weather search by city name
+- Auto-display of Piduguralla weather
+- Current date and time display
+- Responsive and modern UI
+- Shows temperature, weather description, humidity, and wind speed
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up the project locally.
+
+### 1. Clone the Repository
 
 ```bash
+git clone https://github.com/murariram2905/weatherAppAngular.git
+cd weatherAppAngular
+2. Install Dependencies
+bash
+Copy
+Edit
+npm install
+3. Set Up OpenWeatherMap API Key
+Sign up at https://openweathermap.org and get your API key
+
+Add your API key to the service file weather.service.ts:
+
+typescript
+Copy
+Edit
+private apiKey = 'YOUR_API_KEY'; // <-- Replace this with your actual key
+(Optional) You can also store it in environment.ts for better practice.
+
+💻 Run the Application
+bash
+Copy
+Edit
 ng serve
-```
+Open your browser and go to: http://localhost:4200
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Search for a city name to view its weather
 
-## Code scaffolding
+Piduguralla's weather is always shown on the right
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Current date and time shown on the left
 
-```bash
-ng generate component component-name
-```
+🧰 Technologies Used
+Angular 16+
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+TypeScript
 
-```bash
-ng generate --help
-```
+SCSS
 
-## Building
+Bootstrap (for layout/styling)
 
-To build the project run:
+OpenWeatherMap API
 
-```bash
-ng build
-```
+🖼️ Screenshots (Optional)
+Add screenshots here if needed using:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+![Weather App Screenshot](src/assets/screenshot1.png)
 
-## Running unit tests
+Fork the repo
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Create a branch: git checkout -b feature/your-feature
 
-```bash
-ng test
-```
+Commit your changes: git commit -m 'Add feature'
 
-## Running end-to-end tests
+Push to the branch: git push origin feature/your-feature
 
-For end-to-end (e2e) testing, run:
+Open a pull request
 
-```bash
-ng e2e
-```
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+📬 Contact
+Built by Murariram2905
+GitHub: @murariram2905
