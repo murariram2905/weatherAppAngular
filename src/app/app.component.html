@@ -3,14 +3,14 @@
   <!-- Left: Date and Time -->
   <div class="box date-time">
     <h4><strong>{{ currentDate | date: 'fullDate' }}</strong></h4>
-    <p>{{ currentDate | date: 'shortTime' }}</p>
+    <p>{{ currentDate | date: 'longTime' }}</p>
   </div>
 
   <!-- Middle: Search -->
   <div class="box center-box text-center">
     <h2><strong>Angular Weather App</strong></h2>
     <input [(ngModel)]="city" class="form-control mb-3" placeholder="Enter city name" />
-    <button class="btn get-weather-btn mb-3" (click)="getWeather()">Get Weather</button>
+    <button class="btn get-weather-btn mb-3" (click)="getWeatherInfo()">Get Weather</button>
 
   </div>
 

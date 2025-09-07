@@ -7,27 +7,6 @@ import { WeatherService } from './weather.service';
   standalone: false,
   styleUrl: './app.component.scss'
 })
-// export class AppComponent {
-//    city: string = '';
-//   weatherData: any;
-//   error: string = '';
-
-//   constructor(private weatherService: WeatherService) {}
-
-//   getWeather(): void {
-//     this.weatherService.getWeather(this.city).subscribe({
-//       next: (data) => {
-//         this.weatherData = data;
-//         this.error = '';
-//       },
-//       error: (err) => {
-//         this.weatherData = null;
-//         this.error = 'City not found or API error';
-//       },
-//     });
-//   }
-// }
-
 export class AppComponent {
   city: string = '';
   weatherData: any;               // For searched city
@@ -38,15 +17,16 @@ export class AppComponent {
   constructor(private weatherService: WeatherService) {
     this.getPidugurallaWeather();
 
-    // Update time every second
     setInterval(() => {
       this.currentDate = new Date();
     }, 1000);
   }
 
-  getWeather(): void {
+  getWeatherInfo(): void {
     this.weatherService.getWeather(this.city).subscribe({
       next: (data) => {
+                console.log('data',data);
+
         this.weatherData = data;
         this.error = '';
       },
